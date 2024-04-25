@@ -5,6 +5,17 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: root
     password: root
-    url: jdbc:mysql://localhost:3308/wfy
+    url: jdbc:mysql://localhost:3308/lt_user_center
+  #登录超时（一天）
+  session:
+    timeout: 86400
 server:
   port: 8080
+  servlet:
+    context-path: /api
+mybatis-plus:
+  global-config:
+    db-config:
+      logic-delete-field: isDelete
+      logic-delete-value: 1
+      logic-not-delete-value: 0
